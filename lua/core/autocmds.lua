@@ -9,3 +9,11 @@ autocmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
+
+vim.api.nvim_create_autocmd("VimLeavePre", {
+  callback = function()
+    if vim.g.active_theme then
+      require("config.themes").apply(vim.g.active_theme, true)
+    end
+  end,
+})

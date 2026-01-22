@@ -3,10 +3,8 @@ if not ok then
   return
 end
 
--- Opcional: suprimir advertencias temporales
 vim.notify = function() end
 
--- Configura LSP como siempre
 if lspconfig.lua_ls then
   lspconfig.lua_ls.setup({
     on_attach = function(client, bufnr)
@@ -32,9 +30,6 @@ if lspconfig.pyright then
   lspconfig.pyright.setup({ on_attach = on_attach })
 end
 
--- =============================-- =============================
--- LSP seguro sin tsserver ni warnings
--- =============================
 
 
 local has_mason, mason = pcall(require, "mason")
@@ -42,17 +37,16 @@ local has_mason_lsp, mason_lsp = pcall(require, "mason-lspconfig")
 local has_lspconfig, lspconfig = pcall(require, "lspconfig")
 
 if not (has_mason and has_mason_lsp and has_lspconfig) then
-  vim.notify("Faltan plugins LSP", vim.log.levels.WARN)
+
+  vim.notify("LSP plugins left", vim.log.levels.WARN)
   return
 end
 
--- Inicia Mason
 mason.setup()
 mason_lsp.setup({
   ensure_installed = { "lua_ls", "pyright" },
 })
 
--- Atajos LSP
 local on_attach = function(client, bufnr)
   local map = function(mode, lhs, rhs, opts)
     opts = opts or {}
@@ -67,9 +61,7 @@ local on_attach = function(client, bufnr)
   map("n", "<leader>f", vim.lsp.buf.format)
 end
 
--- =============================
--- Configuración Lua LSP
--- =============================
+
 if lspconfig.lua_ls then
   lspconfig.lua_ls.setup({
     on_attach = on_attach,
@@ -84,9 +76,6 @@ if lspconfig.lua_ls then
   })
 end
 
--- =============================
--- Configuración Python LSP
--- =============================
 if lspconfig.pyright then
   lspconfig.pyright.setup({
     on_attach = on_attach,

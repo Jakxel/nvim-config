@@ -9,3 +9,4 @@ vim.opt.cursorline = true
 vim.opt.termguicolors = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.mouse = "a"
+

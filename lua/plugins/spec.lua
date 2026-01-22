@@ -37,4 +37,12 @@ return {
 
   -- ================= UX =================
   { "folke/which-key.nvim" },
+
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = function()
+      require("nvim-autopairs").setup({})
+    end,
+  },
 }
