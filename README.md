@@ -22,7 +22,7 @@ Designed for developers who want a **VS Code-like experience** in Neovim.
 
 ## Screenshot
 
-![Neovim IDE Screenshot](assets/neovim_screenshot.png)
+![Neovim IDE Screenshot](assets/neovim_screenshoot.png)
 
 ---
 
