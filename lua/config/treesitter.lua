@@ -4,30 +4,69 @@ if not ok then
 end
 
 ts.setup({
-  ensure_installed = { "lua", "python", "javascript", "typescript", "bash", "json", "html", "css", "markdown" },
-  sync_install = false,           -- no bloquear al instalar
-  auto_install = true,            -- instalar automáticamente lenguajes faltantes
+  -- ======================
+  -- Language parsers
+  -- ======================
+  ensure_installed = {
+    "lua",
+    "python",
+    "javascript",
+    "typescript",
+    "bash",
+    "json",
+    "html",
+    "css",
+    "markdown",
+    "c",
+    "cpp",
+    "latex",
+    "asm",
+    "nasm",
+    "rust"
+  },
+
+  sync_install = false,
+  auto_install = true,
+
+  -- ======================
+  -- Highlighting
+  -- ======================
   highlight = {
     enable = true,
-    additional_vim_regex_highlighting = false, -- evita conflictos con vim syntax
+    additional_vim_regex_highlighting = false,
   },
+
+  -- ======================
+  -- Indentation
+  -- ======================
   indent = {
     enable = true,
-    disable = { "python" },       -- opcional: python a veces falla
-  },
-  incremental_selection = {       -- selección de nodos (IDE feature)
-    enable = true,
-    keymaps = {
-      init_selection = "gnn",
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm",
+    disable = {
+      "python", -- known issues
+      "latex",  -- Tree-sitter indent is unstable here
     },
   },
-  textobjects = {                -- moverse entre funciones, clases, bloques
+
+  -- ======================
+  -- Incremental selection
+  -- ======================
+  incremental_selection = {
     enable = true,
+    keymaps = {
+      init_selection    = "gnn",
+      node_incremental  = "grn",
+      scope_incremental = "grc",
+      node_decremental  = "grm",
+    },
+  },
+
+  -- ======================
+  -- Textobjects (C / C++ friendly)
+  -- ======================
+  textobjects = {
     select = {
       enable = true,
+      lookahead = true,
       keymaps = {
         ["af"] = "@function.outer",
         ["if"] = "@function.inner",

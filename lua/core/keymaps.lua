@@ -123,10 +123,6 @@ keymap("n", "gr", vim.lsp.buf.references, opts)
 keymap("n", "<leader>f", function()
   vim.lsp.buf.format({ async = true })
 end, opts)
--- Basic shortcuts
-keymap("n", "<leader>w", ":w<CR>")                             -- Save
-keymap("n", "<leader>q", ":q<CR>")                             -- Quit
-keymap("n", "<leader>h", ":nohlsearch<CR>")                    -- Clear highlights
 
 -- Neo-tree shortcuts
 keymap("n", "<leader>e", ":Neotree toggle<CR>")                 -- Toggle explorer

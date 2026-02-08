@@ -38,11 +38,9 @@ return {
   -- ================= UX =================
   { "folke/which-key.nvim" },
 
-  {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    config = function()
-      require("nvim-autopairs").setup({})
-    end,
-  },
+  { "windwp/nvim-autopairs", event = "InsertEnter", config = function() require("nvim-autopairs").setup({}) end, },
+
+  { "mcchrish/zenbones.nvim", dependencies = { "rktjmp/lush.nvim" }, },
+
+  { "famiu/bufdelete.nvim", }
 }

@@ -1,21 +1,5 @@
-require("tokyonight").setup({
-  style = "night", -- o storm, moon, day
-  transparent = false,
-
-  styles = {
-    sidebars = "transparent",
-    floats = "transparent",
-  },
-
-  integrations = {
-    neotree = false,
-    bufferline = false,
-    lualine = false,
-  },
-})
-
-vim.cmd.colorscheme("tokyonight")
-
+vim.o.termguicolors = true
+vim.cmd.colorscheme("kanagawabones") -- or "zenbones"
 require("config.themes").restore()
 
 local theme = require("config.themes").get_colors()
@@ -66,7 +50,6 @@ window = {
 -- =========================================================
 -- Bufferline (VS Code–style buffers)
 -- =========================================================
-
 require("bufferline").setup({
   options = {
     mode = "buffers",
@@ -78,6 +61,9 @@ require("bufferline").setup({
     show_buffer_close_icons = true,
     show_close_icon = false,
 
+    close_command = "Bdelete! %d",
+    right_mouse_command = "Bdelete! %d",
+
     offsets = {
       {
         filetype = "neo-tree",
@@ -87,29 +73,17 @@ require("bufferline").setup({
       },
     },
   },
-
   highlights = {
-    fill = {
-      bg = theme.bg,
-    },
-    background = {
-      bg = theme.bg,
-    },
+    fill = { bg = theme.bg },
+    background = { bg = theme.bg },
     buffer_selected = {
       fg = theme.fg,
       bold = true,
       italic = false,
     },
-    separator = {
-      fg = theme.bg,
-      bg = theme.bg,
-    },
-    separator_selected = {
-      fg = theme.bg,
-    },
-    separator_visible = {
-      fg = theme.bg,
-    },
+    separator = { fg = theme.bg, bg = theme.bg },
+    separator_selected = { fg = theme.bg },
+    separator_visible = { fg = theme.bg },
   },
 })
 

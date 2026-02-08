@@ -14,3 +14,4 @@ require("config.cmp")
 require("config.telescope")
 require("config.formatter")
 require("config.git")
+
