@@ -42,5 +42,13 @@ return {
 
   { "mcchrish/zenbones.nvim", dependencies = { "rktjmp/lush.nvim" }, },
 
-  { "famiu/bufdelete.nvim", }
+  { "famiu/bufdelete.nvim", },
+
+{
+  "goolord/alpha-nvim",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
+  config = function()
+    require("alpha").setup(require("alpha.themes.dashboard").config)
+  end
+}
 }

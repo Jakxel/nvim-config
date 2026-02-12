@@ -1,50 +1,154 @@
-# Neovim IDE Config
+# Jakxelvim — Modern Neovim IDE Config
 
-My personarl Nvim config a **modern, IDE-like Neovim setup** with **Neo-tree, LSP, Treesitter, autocomplete, Telescope, bufferline, Git integration, and formatting**.  
-Designed for developers who want a **VS Code-like experience** in Neovim.  
+A modern, modular, IDE-like Neovim configuration focused on performance, clarity, and full theme control.
+
+Built for developers who want a VS Code–like workflow while keeping Neovim's power and minimalism.
+
+---
+
+## Screenshots
+
+![Neovim Screenshot](assets/nvim_menu.png)
+![Theme Options](assets/neovim_screenshoot.png)
 
 ---
 
 ## Features
 
-- **File Explorer:** Neo-tree with project root detection and file reveal  
-- **Buffers:** Visual bufferline tabs for easy navigation  
-- **Autocomplete:** nvim-cmp with snippet support and Tab navigation  
-- **Fuzzy Finder:** Telescope for files, live grep, and buffers  
-- **Syntax Highlighting:** Treesitter support for multiple languages  
-- **LSP:** Mason-managed LSP servers for Lua, Python, JavaScript, etc.  
-- **Git:** gitsigns integration for inline Git changes  
-- **Formatting:** Conform-based formatting for supported languages  
-- **Keymaps:** Ergonomic leader-based keymaps for navigation and productivity  
-- **Theme:** Tokyo Night colorscheme for a clean modern look  
+### 🖥 UI & Experience
+- Alpha Dashboard with custom `Jakxelvim` startup logo  
+- Custom Theme Engine with persistent theme saving  
+- Dynamic Theme Selector  
+- Lualine statusline  
+- Bufferline tab-style buffer navigation  
+- Devicons for consistent icon support  
+- Which-key keybinding helper  
+- Autopairs automatic bracket/quote pairing  
 
 ---
 
-## Screenshot
+### Navigation
+- Neo-tree file explorer (project-aware)
+- Telescope fuzzy finder:
+  - Find files
+  - Live grep
+  - Buffers
+  - Recent files
 
-![Neovim IDE Screenshot](assets/neovim_screenshoot.png)
+---
+
+### Language Support
+- Treesitter advanced syntax highlighting
+- LSP via Mason + lspconfig
+- Semantic token support
+- Diagnostics with undercurl styling
+
+---
+
+### Autocomplete
+- nvim-cmp
+- LSP completion source
+- Snippet support via LuaSnip
+- Tab-based completion workflow
+
+---
+
+### Theme System
+
+Jakxelvim includes a fully custom theme engine — not just a colorscheme.
+
+The configuration ships with multiple prebuilt themes, and you can easily create your own custom themes by defining a new color palette inside the theme module.
+
+The system supports:
+
+- Full UI recoloring
+- Treesitter integration
+- LSP semantic tokens
+- Diagnostic styling
+- Floating window styling
+- Neo-tree integration
+- Statusline adaptation
+- Alpha dashboard styling
+- Persistent theme saving
+
+---
+
+## Plugin Stack
+
+### UI
+- folke/tokyonight.nvim
+- mcchrish/zenbones.nvim
+- nvim-lualine/lualine.nvim
+- akinsho/bufferline.nvim
+- nvim-tree/nvim-web-devicons
+- goolord/alpha-nvim
+
+### Navigation
+- nvim-neo-tree/neo-tree.nvim
+- nvim-telescope/telescope.nvim
+
+### Syntax
+- nvim-treesitter/nvim-treesitter
+
+### LSP
+- neovim/nvim-lspconfig
+- williamboman/mason.nvim
+- williamboman/mason-lspconfig.nvim
+
+### Autocomplete
+- hrsh7th/nvim-cmp
+- hrsh7th/cmp-nvim-lsp
+- L3MON4D3/LuaSnip
+
+### Formatting
+- stevearc/conform.nvim
+
+### Git
+- lewis6991/gitsigns.nvim
+
+### UX
+- folke/which-key.nvim
+- windwp/nvim-autopairs
+- famiu/bufdelete.nvim
 
 ---
 
 ## Requirements
 
-- Neovim 0.9+  
-- Git  
-- Optional: `stylua`, `black`, `prettier` for formatting  
+- Neovim 0.9+
+- Git
+
+Optional formatters:
+- stylua
+- black
+- prettier
 
 ---
 
 ## Installation
 
-1. Clone this repository:
+Clone the repository:
 
 ```bash
 git clone https://github.com/<your-username>/<your-repo-name>.git ~/.config/nvim
+```
 
-2.	Open Neovim:
+Open Neovim:
 
 ```bash
 nvim
+```
 
-3. The Lazy.nvim plugin manager will automatically install all plugins on first start.
+Lazy.nvim will automatically install all plugins on first launch.
 
+---
+
+## Philosophy
+
+Jakxelvim focuses on:
+
+- Clean UI
+- Strong color identity
+- IDE-level productivity
+- Modular architecture
+- Theme consistency across UI, LSP, and plugins

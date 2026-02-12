@@ -6,6 +6,37 @@ local theme_file = vim.fn.stdpath("data") .. "/active_theme"
 -- Theme definitions
 -- ======================
 M.themes = {
+lofi = {
+  bg = "#1D1D20",
+  bg_alt = "#29292E",
+  bg_float = "#0e0b05",
+  bg_visual = "#1a150a",
+
+  fg = "#e6e1d8",
+  fg_dim = "#a39a8c",
+  fg_dark = "#6f665a",
+
+  accent = "#f0b429",
+  accent_bright = "#ffd166",
+  accent_dim = "#b3861e",
+
+  red = "#e06c75",
+  yellow = "#f0b429",
+  green = "#98c379",
+  blue = "#61afef",
+  purple = "#c678dd",
+  cyan = "#56b6c2",
+
+  gray = "#3a352f",
+  gray_alt = "#2a2520",
+  border = "#1f1a14",
+
+  diag_error = "#e06c75",
+  diag_warn = "#f0b429",
+  diag_info = "#61afef",
+  diag_hint = "#98c379",
+
+},
 dark_amber = {
   bg = "#000000",
   bg_alt = "#060400",
@@ -37,8 +68,8 @@ dark_amber = {
   diag_hint = "#98c379",
 },
   dark_red = {
-    bg        = "#000000",
-    bg_alt    = "#050505",
+  bg = "#1D1D20",
+  bg_alt = "#29292E",
     bg_float  = "#0e0e0e",
     bg_visual = "#1a1a1a",
 
@@ -158,8 +189,8 @@ dark_violet = {
   diag_hint = "#4ade80",
 },
 dark_azure = {
-  bg = "#000000",
-  bg_alt = "#04060a",
+  bg = "#1D1D20",
+  bg_alt = "#29292E",
   bg_float = "#0c1016",
   bg_visual = "#141a24",
 
@@ -343,7 +374,13 @@ local hl = {
 
   NormalFloat  = { fg = c.fg, bg = bg_float },
   FloatBorder  = { fg = accent_dim, bg = bg_float },
-
+  -- ======================
+  -- Alpha (Dashboard)
+  -- ======================
+  AlphaHeader = { fg = c.accent, bold = true },
+  AlphaButtons = { fg = c.blue },
+  AlphaShortcut = { fg = c.yellow },
+  AlphaFooter = { fg = c.fg_dim, italic = true },
   -- ======================
   -- Diagnostics
   -- ======================
